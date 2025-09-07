@@ -168,6 +168,13 @@ function filterReports() {
     updateStatus();
 }
 
+// 改行文字をHTMLの<br>タグに変換する関数
+function formatTextWithLineBreaks(text) {
+    if (!text) return '';
+    // 改行文字（\n、\r\n）を<br>タグに変換
+    return text.replace(/\r?\n/g, '<br>');
+}
+
 // 日報表示
 function displayReports() {
     const container = document.getElementById('reportsList');
@@ -194,19 +201,19 @@ function displayReports() {
                 
                 <div class="content-section">
                     <div class="content-title">連絡事項</div>
-                    <div class="content-text">${report['連絡事項']}</div>
+                    <div class="content-text">${formatTextWithLineBreaks(report['連絡事項'])}</div>
                 </div>` : ''}
 
                 <div class="content-section">
                     <div class="content-title">仕事内容</div>
-                    <div class="content-text">${report['仕事内容'] || ''}</div>
+                    <div class="content-text">${formatTextWithLineBreaks(report['仕事内容'] || '')}</div>
                 </div>
 
                 ${report['明日の予定・課題'] ? `
 
                 <div class="content-section">
                     <div class="content-title">明日の予定・課題</div>
-                    <div class="content-text">${report['明日の予定・課題']}</div>
+                    <div class="content-text">${formatTextWithLineBreaks(report['明日の予定・課題'])}</div>
                 </div>` : ''}
             </div>
         </div>
