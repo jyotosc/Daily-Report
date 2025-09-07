@@ -67,7 +67,7 @@ button {
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    font-size: 0.875rem;
+    font-size: 1rem;
     transition: background-color 0.2s;
 }
 
@@ -181,7 +181,7 @@ button {
     font-weight: 500;
     color: #374151;
     margin-bottom: 0.25rem;
-    font-size: 1rem;
+    font-size: 1.25rem;
 }
 
 .content-text {
